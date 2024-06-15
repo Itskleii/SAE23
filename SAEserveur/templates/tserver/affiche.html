@@ -1,0 +1,20 @@
+{% extends "main.html" %}
+
+{%block title %}Affichage des serveur {%endblock%}
+
+{%block titre %}Affichage des serveur {%endblock%}
+
+{%block content %}
+
+
+<a href="/serveur/ajout/"><button>ajouter un type de serveur</button></a>
+
+    {% for l in liste %}
+
+    <li >{{l}} <a href="/tserver/affiche/{{l.id}}/"> affichage</a> <a href="/tserver/update/{{l.id}}/" class="modif">Mettre à jour</a> <a href="/tserver/delete/{{l.id}}/" class="modif" >Supprimer</a> </li>
+
+    {% endfor %}
+
+<p>Le type est {{tserver.type}} et sa déscription est {{tserver.description}}.</p>
+
+{%endblock%}

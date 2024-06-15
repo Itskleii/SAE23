@@ -1,0 +1,22 @@
+
+
+{% extends "main.html" %}
+
+{%block title %}Affichage des application{%endblock%}
+
+{%block titre %}Affichage des application{%endblock%}
+
+{%block content %}
+
+<a href="/application/ajout/"><button>ajouter une application</button></a>
+
+    {% for l in liste %}
+
+    <li >{{l}} <a href="/application/affiche/{{l.id}}/"> affichage</a> <a href="/application/update/{{l.id}}/" class="modif">Mettre à jour</a> <a href="/application/delete/{{l.id}}/" class="modif" >Supprimer</a> </li>
+
+    {% endfor %}
+
+    <p>Le nom de l'application est {{application.nom_application}}, et l'utilisateur est {{application.utilisateur}}.</p>    
+
+
+{%endblock%}                                                                    

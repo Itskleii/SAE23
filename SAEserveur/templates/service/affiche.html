@@ -1,0 +1,18 @@
+{% extends "main.html" %}
+
+{%block title %}Affichage des services {%endblock%}
+
+{%block titre %}Affichage des services {%endblock%}
+{%block content %}
+
+    {% for l in liste %}
+
+    <li >{{l}} <a href="/service/affiche/{{l.id}}/"> affichage</a> <a href="/service/update/{{l.id}}/" class="modif">Mettre à jour</a> <a href="/service/delete/{{l.id}}/" class="modif" >Supprimer</a> </li>
+
+    {% endfor %}
+
+    <a href="/service/ajout/"><button>ajouter un service</button></a>
+
+<p>Le nom du service est {{service.nom_service}}, il a été lancé le {{service.date_lancement}}. Son espace memoire utilisé est de {{service.espace_memoire_utilise}}. La mémoire vive nécessaire est de {{service.memoire_vive_necessaire}}, enfin son serveur de lancement est {{service.serveur}}.</p>
+
+{%endblock%}                                                                    

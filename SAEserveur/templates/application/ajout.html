@@ -1,0 +1,28 @@
+
+
+
+{% extends "main.html" %}
+
+{%block title %} Ajout application {%endblock%}
+
+{%block titre %}Ajout d'une application {%endblock%}
+
+
+
+
+
+{%block content%}
+
+    {% if id is not None %}
+    <form method="post" action="/application/traitementupdate/{{id}}/" enctype="multipart/form-data">
+{% else %}
+    <form method="post" action="/application/traitement/" enctype="multipart/form-data">
+{%endif%}
+
+
+{% csrf_token %}
+{{ form.as_ul }}
+
+<input type="submit" value="envoyer les données"/>
+</form>
+{%endblock%}

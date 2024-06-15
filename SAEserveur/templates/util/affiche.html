@@ -1,0 +1,18 @@
+{% extends "main.html" %}
+
+{%block title %}Affichage des utilisateur {%endblock%}
+
+{%block titre %}Affichage des utilisateur {%endblock%}
+
+{%block content %}
+
+<a href="/util/ajout/"><button>ajouter un utilisateur</button></a>
+
+{% for l in liste %}
+
+<li >{{l}} <a href="/util/affiche/{{l.id}}/"> affichage</a> <a href="/util/update/{{l.id}}/" class="modif">Mettre à jour</a> <a href="/util/delete/{{l.id}}/" class="modif" >Supprimer</a> </li>
+
+{% endfor %}
+
+<p>L'utilisateur se nomme {{util.nom}} {{util.prenom}}, et son adresse mail est {{util.email}}.</p>
+{%endblock%}                                                                    

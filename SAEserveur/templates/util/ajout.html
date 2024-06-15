@@ -1,0 +1,27 @@
+{% extends "main.html" %}
+
+{%block title %} Ajout utilisateur {%endblock%}
+
+{%block titre %}Ajout d'un utilisateur {%endblock%}
+
+
+
+
+
+{%block content%}
+    
+
+    {% if id is not None %}
+    <form method="post" action="/util/traitementupdate/{{id}}/">
+{% else %}
+    <form method="post" action="/util/traitement/">
+{%endif%}
+
+
+{% csrf_token %}
+{{ form.as_ul }}
+
+<input type="submit" value="envoyer les données"/>
+</form>
+
+{%endblock%}

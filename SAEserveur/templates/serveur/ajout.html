@@ -1,0 +1,35 @@
+{% extends "main.html" %}
+
+{%block title %} Ajout Serveur {%endblock%}
+
+{%block titre %}Ajout d'un serveur {%endblock%}
+
+{%block content%}
+
+    {% if id is not None %}
+    <form method="post" action="/serveur/traitementupdate/{{id}}/">
+        {% else %}
+        <form method="post" action="/serveur/traitement/">
+            {%endif%}
+
+
+            {% csrf_token %}
+            {{ form.as_ul }}
+
+            <input type="submit" value="envoyer les données" />
+        </form>
+    </form>
+{%endblock%}
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,17 @@
+{% extends "main.html" %}
+
+{%block title %}Affichage des serveur {%endblock%}
+
+{%block titre %}Affichage des serveur {%endblock%}
+
+{%block content %}
+<a href="/serveur/ajout/"><button>ajouter un serveur</button></a>
+
+    {% for l in liste %}
+
+    <li >{{l}} <a href="/serveur/affiche/{{l.id}}/"> affichage</a> <a href="/serveur/update/{{l.id}}/" class="modif">Mettre à jour</a> <a href="/serveur/delete/{{l.id}}/" class="modif" >Supprimer</a> <a href="/serveur/{{l.id}}/pdf">télécharger</a> </li>
+    {% endfor %}
+
+<p>Le nom du serveur est {{serveur.nom}}, son type est {{serveur.type}}, il a {{serveur.nb_processeur}} processeur(s). Sa capacité memoire est de {{serveur.capacite_memoire}} Go, enfin sa capacité de stockage est de {{serveur.capacite_stockage}}. </p>
+    
+{%endblock%}                                                                    

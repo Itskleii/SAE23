@@ -1,0 +1,29 @@
+{% extends "main.html" %}
+
+{%block title %} Ajout service {%endblock%}
+
+{%block titre %}Ajout d'un service {%endblock%}
+
+{%block content%}
+
+    {% if messages %}
+        <ul class="messages">
+    {% for message in messages %}
+        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+        </ul>
+    {% endif %}
+    
+    {% if id is not None %}
+    <form method="post" action="/service/traitementupdate/{{id}}/">
+{% else %}
+    <form method="post" action="/service/traitement/">
+{%endif%}
+
+{% csrf_token %}
+{{ form.as_ul }}
+
+<input type="submit" value="envoyer les données"/>
+</form>
+
+{%endblock%}
